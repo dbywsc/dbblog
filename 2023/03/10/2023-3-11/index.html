@@ -16,22 +16,22 @@
   <meta name="author" content="db">
   <meta name="keywords" content="">
   
-    <meta name="description" content="整数二分12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&#x2F;&#x2F;给出一个有序数组，求该数组中第一个&gt;5的数的位置和最后一个&lt;&#x3D;5的数的位置#include &lt;iostream&gt;using namespace std;&#x2F;&#x2F;第一个&gt;5的数的位置in">
+    <meta name="description" content="最近都在看其他的，都快忘了《沉默的大多数》还没看完。抽空把这本杂文集的最后一篇《沉默的大多数》看完了，终于算是看完了全本，这里就写一写类似于读后感的东西吧。 我记得以前就有说过这些杂文都是在作者生命的最后几年时间写下的。作者用犀利的语言表达着他对社会的思考，批判者社会上的丑恶。现在想来，批判的成分其实应该不多，应该说作者的本意不是批判。他说“沉默是一种生活方式“，他也以这样的方式生活着，只是当写作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找">
-<meta property="og:url" content="https://dbywsc.github.io/2023/04/03/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/index.html">
+<meta property="og:title" content="2023.3.11">
+<meta property="og:url" content="https://dbywsc.github.io/2023/03/10/2023-3-11/index.html">
 <meta property="og:site_name" content="db的博客">
-<meta property="og:description" content="整数二分12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&#x2F;&#x2F;给出一个有序数组，求该数组中第一个&gt;5的数的位置和最后一个&lt;&#x3D;5的数的位置#include &lt;iostream&gt;using namespace std;&#x2F;&#x2F;第一个&gt;5的数的位置in">
+<meta property="og:description" content="最近都在看其他的，都快忘了《沉默的大多数》还没看完。抽空把这本杂文集的最后一篇《沉默的大多数》看完了，终于算是看完了全本，这里就写一写类似于读后感的东西吧。 我记得以前就有说过这些杂文都是在作者生命的最后几年时间写下的。作者用犀利的语言表达着他对社会的思考，批判者社会上的丑恶。现在想来，批判的成分其实应该不多，应该说作者的本意不是批判。他说“沉默是一种生活方式“，他也以这样的方式生活着，只是当写作">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-03T12:55:21.000Z">
-<meta property="article:modified_time" content="2023-04-04T03:56:03.431Z">
+<meta property="article:published_time" content="2023-03-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-04T10:34:12.802Z">
 <meta property="article:author" content="db">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>二分查找 - db的博客</title>
+  <title>2023.3.11 - db的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -172,7 +172,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="二分查找"></span>
+            <span id="subtitle" data-typed-text="2023.3.11"></span>
           
         </div>
 
@@ -183,8 +183,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-03 20:55" pubdate>
-          2023年4月3日 晚上
+        <time datetime="2023-03-11 00:00" pubdate>
+          2023年3月11日 凌晨
         </time>
       </span>
     
@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.1k 字
         
       </span>
     
@@ -206,7 +206,7 @@
         
         
         
-          11 分钟
+          10 分钟
         
       </span>
     
@@ -244,13 +244,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二分查找</h1>
+            <h1 style="display: none">2023.3.11</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//给出一个有序数组，求该数组中第一个&gt;5的数的位置和最后一个&lt;=5的数的位置</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-comment">//第一个&gt;5的数的位置</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">binary_search1</span><span class="hljs-params">(<span class="hljs-type">int</span> a[], <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-type">int</span> l = <span class="hljs-number">-1</span>, r = len;<br><br>    <span class="hljs-keyword">while</span>(l + <span class="hljs-number">1</span> != r) &#123;<br>        <span class="hljs-type">int</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(a[mid] &lt;= x)<br>            l = mid;<br>        <span class="hljs-keyword">else</span><br>            r = mid;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> r;<br>&#125;<br><br><span class="hljs-comment">//最后一个&lt;=5的数的位置</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">binary_search2</span><span class="hljs-params">(<span class="hljs-type">int</span> a[], <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-type">int</span> l = <span class="hljs-number">-1</span>, r = len;<br><br>    <span class="hljs-keyword">while</span>(l + <span class="hljs-number">1</span> != r) &#123;<br>        <span class="hljs-type">int</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(a[mid] &gt; x)<br>            r = mid;<br>        <span class="hljs-keyword">else</span><br>            l = mid;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> </span>&#123;<br>    <span class="hljs-type">int</span> a[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>&#125;;<br><br>    <span class="hljs-type">int</span> len = <span class="hljs-built_in">sizeof</span>(a) / <span class="hljs-built_in">sizeof</span>(<span class="hljs-type">int</span>);<br><br>    <span class="hljs-comment">//第一个&gt;5的数的位置</span><br>    cout &lt;&lt; <span class="hljs-built_in">binary_search1</span>(a, len, <span class="hljs-number">5</span>) &lt;&lt; endl;<br>    <span class="hljs-comment">//最后一个&lt;=5的数的位置</span><br>    cout &lt;&lt; <span class="hljs-built_in">binary_search2</span>(a, len, <span class="hljs-number">5</span>) &lt;&lt; endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-<h1 id="浮点二分"><a href="#浮点二分" class="headerlink" title="浮点二分"></a>浮点二分</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//输入一个浮点数n(-10000 &lt;= n &lt;= 10000)，求n的三次方根，小数点向后保留六位</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> </span>&#123;<br>    <span class="hljs-type">double</span> n;<br>    cin &gt;&gt; n;    <br><br>    <span class="hljs-type">double</span> l = <span class="hljs-number">-100</span>, r = <span class="hljs-number">100</span>;   <span class="hljs-comment">//-10000 &lt;= n &lt;= 10000，所以n的三次方根c -100 &lt;= c &lt;= 100</span><br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) &#123; <br>        <span class="hljs-type">double</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(mid * mid * mid &lt;= n)<br>            l = mid;<br>        <span class="hljs-keyword">else</span><br>            r = mid;<br>    &#125; <br><br>    <span class="hljs-comment">/*</span><br><span class="hljs-comment">        循环执行100次后能够将答案精度控制在小数点后30位(但是double的精度大概是15-17位)，此时l和r将会非常接近，将答案四舍五入到6位后 l == r</span><br><span class="hljs-comment">    */</span><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.6f\n&quot;</span>, l);<br>    <span class="hljs-comment">//printf(&quot;%.6f\n&quot;, r);</span><br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+                <p>最近都在看其他的，都快忘了《沉默的大多数》还没看完。抽空把这本杂文集的最后一篇《沉默的大多数》看完了，终于算是看完了全本，这里就写一写类似于读后感的东西吧。</p>
+<p>我记得以前就有说过这些杂文都是在作者生命的最后几年时间写下的。作者用犀利的语言表达着他对社会的思考，批判者社会上的丑恶。现在想来，批判的成分其实应该不多，应该说作者的本意不是批判。他说“沉默是一种生活方式“，他也以这样的方式生活着，只是当写作时才以文字为载体把话都说了出来。他只是在讲述自己的所看和所想而已。</p>
+<p>在看王小波的小说时我们能深刻的感受到他的黑色幽默，有时在看一篇小说的时候我总是花很长的时间思考这个荒诞的故事背后有什么深刻的含义，但总是百思不得其解。后来我又觉得也许它没有什么对社会的思考或者含蓄的表达，王小波也不是鲁迅拿卓在黑暗中战斗的大文豪、思想家——所以它也许只是单纯的在讲一个故事而已。我又想让读者费劲心思去思考本没有什么内涵的小说的内涵，最后无论是得出它没有内涵的结论（当然你也可以说它在反映现实）或者编出了一个什么内涵，这一整件事都算是黑色幽默——虽然这不是作者的本意。</p>
+<p>当看到王小波的杂文时，我对作者的认识便与看小说时有了很大的差别，当然那种刻在骨子里的黑色幽默依然存在，不过只算做点缀，作者用自己的视角而不是“王二“或者小说中的”我“表达自己的思考。我曾经惊叹于他竟然在那个时期直白的描述文革，描述社会问题，批判儒学，甚至关注同性恋这样的少数群体（这样的事情如今看来不足为奇，但我们需要了解一下当时的社会环境）。现在看来他应该没有做激烈的思想斗争，也没有激发大无畏的勇气和毅力。他是一个学者，做了一项社会学研究，于是把自己的思考写出来；或者他经历了一些动荡，看到了一些丑恶，他觉得不好，于是用文字表达了一下什么不好、为什么不好。没有大清的文字狱，写些弯弯绕绕的没什么意义，所以他也没有必要那样写。作为一个生活在沉默中的人，做出这样的事情反而是最让人不足为奇的，正如他所说：“对信得过的人什么都说，对信不过的人什么都不说。”他只是什么都说了，仅此而已。</p>
+<p>他说他后来也做一些发言，也写一些稿子，他说这如同失去了童贞一样。他不再沉默，但他代表着的确是“沉默的大多数“。<br>有许多青年曾经追随他——在他逝世之后。人们说他是叛逆的代表，我觉得他所表现出来的叛逆源于他曾经的沉默。我应当也是追随他的青年中的一员。</p>
+<p>引用一下《沉默的大多数》的结尾作为我的结尾：<br>“几年前，我刚刚走出沉默，写了一本书，送给长者看。他不喜欢这本书，认为书不能这样来写。找他来看，写书就应该能教育人民，提升人的灵魂。这真是金玉良言。但在这世界上的一切人之中，我最希望予以提升的一个，就是我自己。这话很卑鄙，很自私，也很诚实。“</p>
 
                 
               </div>
@@ -263,7 +267,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+        <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
       
     </div>
   
@@ -275,8 +279,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>二分查找</div>
-      <div>https://dbywsc.github.io/2023/04/03/二分查找/</div>
+      <div>2023.3.11</div>
+      <div>https://dbywsc.github.io/2023/03/10/2023-3-11/</div>
     </div>
     <div class="license-meta">
       
@@ -288,7 +292,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月3日</div>
+          <div>2023年3月11日</div>
         </div>
       
       
@@ -320,12 +324,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/04/03/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">二分查找</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/10/2023-3-11/" title="2023.3.11">
-                        <span class="hidden-mobile">2023.3.11</span>
+                      <a href="/2023/02/18/%E6%97%A5%E8%AE%B02023-2-18/" title="日记2023-2-18">
+                        <span class="hidden-mobile">日记2023-2-18</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -343,8 +353,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://dbywsc.github.io/2023/04/03/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/';
-          this.page.identifier = '/2023/04/03/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/';
+          this.page.url = 'https://dbywsc.github.io/2023/03/10/2023-3-11/';
+          this.page.identifier = '/2023/03/10/2023-3-11/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
