@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          721 字
+          716 字
         
       </span>
     
@@ -206,7 +206,7 @@
         
         
         
-          7 分钟
+          6 分钟
         
       </span>
     
@@ -252,18 +252,17 @@
                 <h1 id="线性表的插入和删除操作"><a href="#线性表的插入和删除操作" class="headerlink" title="线性表的插入和删除操作"></a>线性表的插入和删除操作</h1><ul>
 <li><p>插入</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(SqList *L, <span class="hljs-type">int</span> i, ElemType e)</span> &#123;<br>    <span class="hljs-type">int</span> k;<br>    <br>    <span class="hljs-keyword">if</span>(L-&gt;length == MAXSIZE)<br>        <span class="hljs-keyword">return</span> ERROR;<br>    <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">1</span> || i &gt; L-&gt;length + <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> ERROR;<br>    <span class="hljs-keyword">if</span>(i &lt;= L-&gt;length) &#123;<br>        <span class="hljs-keyword">for</span>(k = L-&gt;length - <span class="hljs-number">1</span>; k &gt;= i - <span class="hljs-number">1</span>; k--) <br>            L-&gt;data[k + <span class="hljs-number">1</span>] = L-&gt;data[k];<br>    &#125;<br>    <br>	L-&gt;data[i - <span class="hljs-number">1</span>] = e;<br>    L-&gt;length++;<br>    <br>    <span class="hljs-keyword">return</span> OK<br>&#125;<br></code></pre></td></tr></table></figure>
-
 <p>插入的时间复杂度为</p>
 </li>
 <li><p>删除</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(SqList *L, <span class="hljs-type">int</span> i, ElemType *e)</span> &#123;<br>    <span class="hljs-type">int</span> k;<br>    <br>    <span class="hljs-keyword">if</span>(L-&gt;length == <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> ERROR;<br>    <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">1</span> || i &gt; L-&gt;length) <br>        <span class="hljs-keyword">return</span> ERROR;<br>    *e = L-&gt;data[i - <span class="hljs-number">1</span>];<br>    <br>    <span class="hljs-keyword">if</span>(i &lt; L-&gt;length) &#123;<br>        <span class="hljs-keyword">for</span>(k = i; k &lt; L-&gt;length; k++)<br>            L-&gt;data[k - <span class="hljs-number">1</span>] = L-&gt;data[k];<br>    &#125;<br>    <br>    L-&gt;length --;<br>    <span class="hljs-keyword">return</span> ok;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
 </li>
+</ul>
+<ul>
 <li><p>时间复杂度：</p>
 <h6 id="最好情况："><a href="#最好情况：" class="headerlink" title="最好情况："></a>最好情况：</h6><p>如果要插入或删除的元素在最后一个位置，时间复杂度为O(1)</p>
 <h6 id="最坏情况："><a href="#最坏情况：" class="headerlink" title="最坏情况："></a>最坏情况：</h6><p>如果要插入或删除的元素在第一个位置，则要进行n次操作，时间复杂度为O(n)</p>
-<h6 id="平均情况："><a href="#平均情况：" class="headerlink" title="平均情况："></a>平均情况：</h6><p>O((n - 1) &#x2F; 2)</p>
+<h6 id="平均情况："><a href="#平均情况：" class="headerlink" title="平均情况："></a>平均情况：</h6><p>O((n - 1) / 2)</p>
 </li>
 </ul>
 
